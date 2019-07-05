@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/wuketao/Public/study/android/keys/Untitled')
+            storePassword '841010'
+            keyAlias = 'key0'
+            keyPassword 'wuketao277'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.androiddemo"

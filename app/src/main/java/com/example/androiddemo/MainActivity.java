@@ -9,8 +9,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
-    private Button btnStartupH5;
+    Button btnStartupH5;
+    Button btnStartupHttp;
 
     /**
      * 视图创建
@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStartupH5 = findViewById(R.id.btn_startup_h5);
         btnStartupH5.setOnClickListener(this);
+
+        btnStartupHttp = findViewById(R.id.btn_startup_http);
+        btnStartupHttp.setOnClickListener(this);
     }
 
     /**
@@ -39,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(MainActivity.this, H5Activity.class);
                 intent.putExtra("url", "http://www.jikexueyuan.com/");
                 startActivity(intent);
+                break;
+            case R.id.btn_startup_http:
+                startActivity(new Intent(MainActivity.this, HTTPActivity.class));
                 break;
         }
     }

@@ -12,4 +12,8 @@ public class Constant {
      * 获取全部用户信息
      */
     public static final String userFindAll = baseUrl + "/user/findAll";
+    /**
+     * 提交用户信息
+     */
+    public static final String userSave = baseUrl + "/user/save";
 }

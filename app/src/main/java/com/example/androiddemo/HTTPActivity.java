@@ -1,6 +1,7 @@
 package com.example.androiddemo;
 
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.androiddemo.utils.Constant;
 import com.example.androiddemo.utils.HttpManager;
@@ -30,8 +33,10 @@ public class HTTPActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnGet;
     Button btnPost;
-    Gson gson = new Gson();
+    EditText etName;
+    EditText etEmail;
     private final String TEST = "test";
+    private final String TEST2 = "test2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,8 @@ public class HTTPActivity extends AppCompatActivity implements View.OnClickListe
         btnGet.setOnClickListener(this);
         btnPost = findViewById(R.id.btn_post);
         btnPost.setOnClickListener(this);
+        etName = findViewById(R.id.et_name);
+        etEmail = findViewById(R.id.et_email);
     }
 
     /**
@@ -51,13 +58,15 @@ public class HTTPActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View v) {
+        Map<String, String> params = new HashMap<>();
         switch (v.getId()) {
             case R.id.btn_get:
-                Map<String,String> params = new HashMap<>();
-                params.put("name","吴克涛");
-                HttpManager.get(TEST, Constant.userFindAll, params, HTTPActivity.this, this);
+                HttpManager.get(TEST, Constant.userFindAll, null, this, this);
                 break;
             case R.id.btn_post:
+                params.put("name", etName.getText().toString());
+                params.put("email", etEmail.getText().toString());
+                HttpManager.postJSON(TEST2, Constant.userSave, params, this, this);
                 break;
         }
     }
@@ -70,9 +79,15 @@ public class HTTPActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void DealwithHttpResponse(String tag, String responseBody) {
+        Looper.prepare();
         switch (tag) {
             case TEST:
+                Toast.makeText(HTTPActivity.this, responseBody, Toast.LENGTH_LONG).show();
+                break;
+            case TEST2:
+                Toast.makeText(HTTPActivity.this, responseBody, Toast.LENGTH_LONG).show();
                 break;
         }
+        Looper.loop();
     }
 }

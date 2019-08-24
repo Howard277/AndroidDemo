@@ -15,8 +15,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_bg1"
-        android:text="启动H5" />
+        android:background="@drawable/button_bg"
+        android:text="启动H5"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"/>
 
     <Button
         android:id="@+id/btn_startup_http"
@@ -24,6 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/button_bg1"
-        android:text="启动Http" />
+        android:background="@drawable/button_bg"
+        android:text="启动Http"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"/>
 </LinearLayout>

@@ -32,7 +32,8 @@ public class H5Activity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         // 获取web view 对象
         webView = findViewById(R.id.webView1);
-        webView.addJavascriptInterface(this, "android");//添加js监听 这样html就能调用客户端
+        //添加js监听 这样html就能调用客户端
+        webView.addJavascriptInterface(this, "android");
         webView.setWebChromeClient(webChromeClient);
         webView.setWebViewClient(webViewClient);
         WebSettings webSettings = webView.getSettings();

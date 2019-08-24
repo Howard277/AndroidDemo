@@ -51,8 +51,11 @@
         android:id="@+id/btn_get"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_bg1"
-        android:text="get请求" />
+        android:background="@drawable/button_bg"
+        android:text="get请求"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"/>
 
 
     <View
@@ -121,8 +124,11 @@
         android:id="@+id/btn_post"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_bg1"
-        android:text="POST请求" />
+        android:background="@drawable/button_bg"
+        android:text="POST请求"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"/>
 
 
 </LinearLayout>

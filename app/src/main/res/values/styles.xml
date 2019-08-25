@@ -13,8 +13,34 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.NoTitle">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--通用按钮 样式-->
+    <style name="GeneralButton">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <!--标准按钮 样式-->
+    <style name="StandardButton" parent="GeneralButton">
+        <item name="android:background">@drawable/button_bg</item>
+    </style>
+    <!--警告按钮 样式-->
+    <style name="WarningButton" parent="GeneralButton">
+        <item name="android:background">@drawable/button_bg_warn</item>
+    </style>
+    <!--危险按钮 样式-->
+    <style name="DangerButton" parent="GeneralButton">
+        <item name="android:background">@drawable/button_bg_danger</item>
+    </style>
 </resources>

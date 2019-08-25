@@ -1,16 +1,22 @@
-package com.example.androiddemo;
+package com.example.androiddemo.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.example.androiddemo.R;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnStartupH5;
     Button btnStartupHttp;
+    Button btnStartupMenu;
+    Button btnChild;
 
     /**
      * 视图创建
@@ -21,12 +27,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         btnStartupH5 = findViewById(R.id.btn_startup_h5);
         btnStartupH5.setOnClickListener(this);
 
         btnStartupHttp = findViewById(R.id.btn_startup_http);
         btnStartupHttp.setOnClickListener(this);
+
+        btnStartupMenu = findViewById(R.id.btn_startup_menu);
+        btnStartupMenu.setOnClickListener(this);
+
+        btnChild = findViewById(R.id.btn_child);
+        btnChild.setOnClickListener(this);
     }
 
     /**
@@ -45,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_startup_http:
                 startActivity(new Intent(MainActivity.this, HTTPActivity.class));
+                break;
+            case R.id.btn_startup_menu:
+                startActivity(new Intent(MainActivity.this, MenuActivity.class));
+                break;
+            case R.id.btn_child:
+                startActivity(new Intent(MainActivity.this, ChildActivity.class));
                 break;
         }
     }

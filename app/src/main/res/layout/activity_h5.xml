@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".H5Activity">
+    tools:context=".activity.H5Activity">
 
 
     <ProgressBar

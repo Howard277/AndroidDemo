@@ -1,33 +1,20 @@
-package com.example.androiddemo;
+package com.example.androiddemo.activity;
 
 import android.os.Bundle;
 import android.os.Looper;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.androiddemo.R;
 import com.example.androiddemo.utils.Constant;
 import com.example.androiddemo.utils.HttpManager;
 import com.example.androiddemo.utils.HttpResponseHandler;
-import com.example.androiddemo.vo.UserVO;
-import com.google.gson.Gson;
 
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 public class HTTPActivity extends AppCompatActivity implements View.OnClickListener, HttpResponseHandler {
 
